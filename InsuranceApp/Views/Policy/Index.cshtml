@@ -1,0 +1,86 @@
+﻿@model IEnumerable<InsuranceApp.ViewModels.PolicyViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<p>
+    <button type="button" class="btn btn-outline-primary">@Html.ActionLink("Create New Policy", "CreatePolicy")</button>
+
+</p>
+<br />
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Plicies List</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Policy)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.PolicyType)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Duration)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Cost)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Policy)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PolicyType)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Duration)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Cost)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-info">@Html.ActionLink("Edit", "EditPolicy", new { id = item.Id })</button>
+                                @*|<button type="button" class="btn btn-info">@Html.ActionLink("Detail", "EditPolicy", new { id = item.Id })</button>*@
+                                |
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Delete</button>
+                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog modal-sm" role="document">
+                                        <div class="modal-content">
+
+                                            <div class="modal-body">
+                                                <h4>Delete this account from application ?</h4>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-danger">@Html.ActionLink("Delete", "Delete", new { id = item.Id })</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

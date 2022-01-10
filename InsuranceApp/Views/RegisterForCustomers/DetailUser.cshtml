@@ -1,0 +1,155 @@
+﻿@model InsuranceApp.ViewModels.RegisterForCustomersViewModel
+
+@{
+    ViewBag.Title = "DetailUser";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">@Html.DisplayFor(model => model.CustomerName)'s Detail Information</h6>
+    </div>
+    <div class="card-body">
+        <div class="col-md-12" style="padding-left:350px;">
+            <img src="@Url.Content(Model.photo)" height="150" width="150" />
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <dl>
+                    <table cellpadding="15">
+                        <tr>
+                            <td>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CustomerName):
+                    </dt>
+                    </td>
+                    <td>
+                    <dd>
+                        @Html.DisplayFor(model => model.CustomerName)
+                    </dd>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.PhoneNo):
+                    </dt>
+                    </td>
+                    <td>
+                    <dd>
+                        @Html.DisplayFor(model => model.PhoneNo)
+                    </dd>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email):
+                    </dt>
+                    </td>
+                    <td>
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CityName)
+                    </dt>
+                    </td>
+                    <td>
+                    <dd>
+                        @Html.DisplayFor(model => model.CityName)
+                    </dd>
+                    </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TownshipName)
+                    </dt>
+                    </td>
+                    <td>
+                    <dd>
+                        @Html.DisplayFor(model => model.TownshipName)
+                    </dd>
+                    </td>
+                    </tr>
+
+                    </table>
+                </dl>
+            </div>
+            <div class="col-md-6">
+
+                <dl>
+                    <table cellpadding="15">
+                        <tr>
+                            <td>
+                    <dt>
+                        NRC Number:
+                    </dt>
+                    </td>
+                    <td>
+                    <dd>
+                        @Html.DisplayFor(model => model.FirstPart)/
+                        @Html.DisplayFor(model => model.SecondPart) (N)
+                        @Html.DisplayFor(model => model.NRCnumber)
+                    </dd>
+
+                    </td>
+                    </tr>
+
+
+                   
+                    <tr>
+                        <td>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Address)
+                    </dt>
+                    </td>
+                    <td>
+                    <dd>
+                        @Html.DisplayFor(model => model.Address)
+                    </dd>
+                    </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DOB)
+                    </dt>
+                    </td>
+                    <td>
+                    <dd>
+                        @Html.DisplayFor(model => model.DOB)
+                    </dd>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Gender)
+                    </dt>
+                    </td>
+                    <td>
+                    <dd>
+                        @Html.DisplayFor(model => model.Gender)
+                    </dd>
+                    </td>
+                    </tr>
+                    </table>
+                </dl>
+
+            </div>
+        </div>
+
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+
+

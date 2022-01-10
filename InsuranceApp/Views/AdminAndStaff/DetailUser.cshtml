@@ -1,0 +1,126 @@
+﻿@model InsuranceApp.ViewModels.AdminAndStaffViewModel
+
+@{
+    ViewBag.Title = "DetailUser";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">@Html.DisplayFor(model => model.UserName)'s Detail Information</h6>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <dl>
+                    <table cellpadding="15">
+                        <tr>
+                            <td>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.UserName):
+                    </dt>
+                    </td>
+                    <td>
+                    <dd>
+                        @Html.DisplayFor(model => model.UserName)
+                    </dd>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Roll):
+                    </dt>
+                    </td>
+                    <td>
+                    <dd>
+                        @Html.DisplayFor(model => model.Roll)
+                    </dd>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email):
+                    </dt>
+                    </td>
+                    <td>
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Upwd)
+                    </dt>
+                    </td>
+                    <td>
+                    <dd>
+                        @Html.DisplayFor(model => model.Upwd)
+                    </dd>
+                    </td>
+                    </tr>
+
+                    </table>
+                </dl>
+            </div>
+            <div class="col-md-6">
+
+                <dl>
+                    <table cellpadding="15">
+                        <tr>
+                            <td>
+                    <dt>
+                        NRC Number:
+                    </dt>
+                    </td>
+                    <td>
+                    <dd>
+                        @Html.DisplayFor(model => model.FirstPart)/
+                        @Html.DisplayFor(model => model.SecondPart) (N)
+                        @Html.DisplayFor(model => model.NRCnumber)
+                    </dd>
+
+                    </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DOB)
+                    </dt>
+                    </td>
+                    <td>
+                    <dd>
+                        @Html.DisplayFor(model => model.DOB)
+                    </dd>
+                    </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Gender)
+                    </dt>
+                    </td>
+                    <td>
+                    <dd>
+                        @Html.DisplayFor(model => model.Gender)
+                    </dd>
+                    </td>
+                    </tr>
+                    </table>
+                </dl>
+
+            </div>
+        </div>
+ 
+<p>
+    @Html.ActionLink("Edit", "EditAdminAndStaff", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
